@@ -6,7 +6,7 @@ import { GerenciamentoComponent } from './gerenciamento/gerenciamento.component'
 
 const routes: Routes = [
   {
-    path: 'cadastro',
+    path: '',
     component: CadastroComponent
   },
   {
