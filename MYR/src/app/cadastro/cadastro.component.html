@@ -1,3 +1,67 @@
-<p>
-  cadastro works!
-</p>
+<h2>Cadastro de Regras de Negócio</h2>
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+
+  <mat-card>
+    <mat-card-title>Regras de Negócio</mat-card-title>
+    <mat-form-field>
+      <input matInput placeholder="Nome da Regra" id="nomeRegras" [(ngModel)]="regras.nomeRegras" name="nomeRegras">
+    </mat-form-field>
+    <p>
+      <mat-form-field>
+        <textarea matInput placeholder="Descrição da Regra" id="descricaoRegras" [(ngModel)]="regras.descricaoRegras"
+          name="descricaoRegras"></textarea>
+      </mat-form-field>
+    </p>
+  </mat-card>
+
+  <mat-grid-list cols="2" rowHeight="1:1">
+      <mat-grid-tile>
+      <mat-card class="teste">
+        <mat-card-title>Parâmetro de Entrada</mat-card-title>
+        <mat-form-field>
+          <input matInput placeholder="Nome do Parâmetro de Entrada" id="nomeParEntrada" [(ngModel)]="regras.nomeParEntrada"
+            name="nomeParEntrada">
+        </mat-form-field>
+        <p>
+          <mat-form-field>
+            <mat-select placeholder="Tipo de Parâmetro" id="tipoParEntrada" [(ngModel)]="regras.tipoParEntrada" name="tipoParEntrada">
+              <mat-option value="String">String</mat-option>
+              <mat-option value="Integer">Integer</mat-option>
+              <mat-option value="Boolean">Boolean</mat-option>
+              <mat-option value="Date">Date</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-radio-group>
+            <mat-radio-button value="true">Sim</mat-radio-button>
+            <mat-radio-button value="False">Não</mat-radio-button>
+          </mat-radio-group>
+        </p>
+      </mat-card>
+    </mat-grid-tile>
+ 
+    <mat-grid-tile>
+      <mat-card class="teste">
+        <mat-card-title>Parâmetro de Saida</mat-card-title>
+        <mat-form-field>
+          <input matInput placeholder="Nome do Parâmetro de Saida" id="nomeParSaida" [(ngModel)]="regras.nomeParSaida"
+            name="nomeParSaida">
+        </mat-form-field>
+        <p>
+          <mat-form-field>
+            <mat-select placeholder="Tipo de Parâmetro" id="tipoParSaida" [(ngModel)]="regras.tipoParSaida" name="tipoParSaida">
+              <mat-option value="String">String</mat-option>
+              <mat-option value="Integer">Integer</mat-option>
+              <mat-option value="Boolean">Boolean</mat-option>
+              <mat-option value="Date">Date</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</form>
