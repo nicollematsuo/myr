@@ -1,34 +1,41 @@
 <p></p>
-<mat-card class="teste80">
-  <mat-card-title>Cadastro de Regras de Negócio</mat-card-title>
-</mat-card>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="85%">
+    <mat-card>
+      <mat-card-title style="text-align: center">Cadastro de Regras de Negócio</mat-card-title>
+    </mat-card>
+  </div>
+</div>
 <p></p>
 <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-
-  <mat-card class="teste80">
-    <mat-card-title>Regras de Negócio</mat-card-title>
-    <mat-form-field class="teste100">
-      <input matInput placeholder="Nome da Regra" id="nomeRegras" [(ngModel)]="regras.nomeRegras" name="nomeRegras">
-    </mat-form-field>
-    <p>
-      <mat-form-field class="teste100">
-        <textarea matInput placeholder="Descrição da Regra" id="descricaoRegras" [(ngModel)]="regras.descricaoRegras"
-          name="descricaoRegras"></textarea>
-      </mat-form-field>
-    </p>
-  </mat-card>
-  <p></p>
-    <!--container de parametros-->
   <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-    <div fxFlex="40%">
+    <div fxFlex="85%">
+      <mat-card>
+        <mat-card-title>Regras de Negócio</mat-card-title>
+        <mat-form-field class="teste100">
+          <input matInput placeholder="Nome da Regra" id="nomeRegras" [(ngModel)]="regras.nomeRegras" name="nomeRegras">
+        </mat-form-field>
+        <p>
+          <mat-form-field class="teste100">
+            <textarea matInput placeholder="Descrição da Regra" id="descricaoRegras" [(ngModel)]="regras.descricaoRegras"
+              name="descricaoRegras"></textarea>
+          </mat-form-field>
+        </p>
+      </mat-card>
+    </div>
+  </div>
+  <p></p>
+  <!--container de parametros-->
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="42%">
       <mat-card>
         <mat-card-title>Parâmetro de Entrada</mat-card-title>
         <mat-form-field class="teste100">
-          <input matInput placeholder="Nome do Parâmetro de Entrada" id="nomeParEntrada" [(ngModel)]="regras.nomeParEntrada"
+            <input matInput placeholder="Nome do Parâmetro de Entrada" id="nomeParEntrada" [(ngModel)]="regras.nomeParEntrada"
             name="nomeParEntrada">
         </mat-form-field>
-        <BR>
-        <mat-form-field style="float:left">
+        <br>
+        <mat-form-field>
           <mat-select placeholder="Tipo de Parâmetro" id="tipoParEntrada" [(ngModel)]="regras.tipoParEntrada" name="tipoParEntrada">
             <mat-option value="String">String</mat-option>
             <mat-option value="Integer">Integer</mat-option>
@@ -36,43 +43,51 @@
             <mat-option value="Date">Date</mat-option>
           </mat-select>
         </mat-form-field>
-        <div style="margin-left: 55%">
-          <div>Mandatório?</div>
-          <mat-radio-group>
-            <mat-radio-button value="true">Sim</mat-radio-button>
-            <div> </div>
-            <mat-radio-button value="False">Não</mat-radio-button>
-          </mat-radio-group>
-        </div>
+          <div style="margin-left: auto;float:right;margin-right: 20%">
+              <div>Mandatório?</div>
+              <mat-radio-group>
+                <mat-radio-button value="true">Sim</mat-radio-button>
+                <div> </div>
+                <mat-radio-button value="False">Não</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+        
       </mat-card>
-      </div>
-    
-
-      <div fxFlex="40%">
-        <mat-card>
-          <mat-card-title>Parâmetro de Saida</mat-card-title>
-          <mat-form-field class="teste100">
-            <input matInput placeholder="Nome do Parâmetro de Saida" id="nomeParSaida" [(ngModel)]="regras.nomeParSaida"
-              name="nomeParSaida">
-          </mat-form-field>
-          <br>
-          <mat-form-field>
-            <mat-select placeholder="Tipo de Parâmetro" id="tipoParSaida" [(ngModel)]="regras.tipoParSaida" name="tipoParSaida">
-              <mat-option value="String">String</mat-option>
-              <mat-option value="Integer">Integer</mat-option>
-              <mat-option value="Boolean">Boolean</mat-option>
-              <mat-option value="Date">Date</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-card>
-      </div>
+      <!--inserir novos cards de entrada-->
+      <button mat-raised-button color="primary">+ Parametro de Entrada</button>
     </div>
-    <br>
+    <div fxFlex="42%">
+      <mat-card>
+        <mat-card-title>Parâmetro de Saida</mat-card-title>
+        <mat-form-field class="teste100">
+          <input matInput placeholder="Nome do Parâmetro de Saida" id="nomeParSaida" [(ngModel)]="regras.nomeParSaida"
+            name="nomeParSaida">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-select placeholder="Tipo de Parâmetro" id="tipoParSaida" [(ngModel)]="regras.tipoParSaida" name="tipoParSaida">
+            <mat-option value="String">String</mat-option>
+            <mat-option value="Integer">Integer</mat-option>
+            <mat-option value="Boolean">Boolean</mat-option>
+            <mat-option value="Date">Date</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card>
+      <!--inserir novos cards de saida-->
+      <button mat-raised-button color="primary">+ Parametro de Saida</button>
+    </div>
+  </div>
+  <br>
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="85%">
+      <button mat-raised-button color="primary" style="padding: 4px 48%;">Salvar</button>
+    </div>
+<p></p>
+<div fxFlex="85%">
+      <button mat-raised-button color="warn" style="padding: 4px 48%;">Cancelar</button>
+    </div>
+  </div>
 
 
-    <button mat-raised-button color="primary">Primary</button>
-
-
-
-
-</form>

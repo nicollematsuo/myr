@@ -5,7 +5,7 @@ import 'hammerjs';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
+import { MatInputModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule} from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
@@ -20,12 +20,14 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { GerenciamentoComponent } from './gerenciamento/gerenciamento.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
     SidenavComponent,
     GerenciamentoComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,9 @@ import { GerenciamentoComponent } from './gerenciamento/gerenciamento.component'
     MatListModule,
     AppRoutingModule,
     MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     FlexLayoutModule,
 
   ],
