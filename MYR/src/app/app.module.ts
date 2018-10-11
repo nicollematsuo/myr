@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +44,7 @@ import { GerenciamentoComponent } from './gerenciamento/gerenciamento.component'
     MatListModule,
     AppRoutingModule,
     MatGridListModule,
+    FlexLayoutModule,
 
   ],
   providers: [],
