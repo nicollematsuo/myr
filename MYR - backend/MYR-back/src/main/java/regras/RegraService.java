@@ -7,74 +7,75 @@ package regras;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 
 /**
  *
  * @author kamil
  */
+@Stateless
 @Path("/regras")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class RegraService {
     
-    static Integer count;
-    List<Regra> regras;
-    
+    @PersistenceContext(unitName = "RegrasPU")
+    private EntityManager entityManager;
+      
     public RegraService(){
-        regras = new ArrayList<>();
-        count = 1;
     }    
     
     @GET
     public List<Regra> getRegras(){
-        return regras;
+        Query query = entityManager.createQuery("SELECT r FROM Regra r");
+        query.getResultList();
+        return (List<Regra>) query;
     }
     
     @POST
-    public void adicionar(Regra regra){
-        regra.setId(count++);
-        regras.add(regra);
+    public Regra adicionar(Regra regra){
+        entityManager.persist(regra);
+        return regra;
     }
     
     @PUT
     @Path("(id)")
-    public void atualizar(@PathParam("id") Integer id, Regra regra){
-        for(Regra r : regras){
-            if(r.getId().equals(id)){
-                r.setDescricao(regra.getDescricao());
-                r.setNome(regra.getNome());
-                r.setParEntrada(regra.getParEntrada());
-                r.setParSaida(regra.getParSaida());
-                break;
-            }
-        }
+    public Regra atualizar(@PathParam("id") Integer id, Regra regraAtualizada){
+        Regra regraEncontrada = getRegra(id);
+        regraEncontrada.setNome(regraAtualizada.getNome());
+        regraEncontrada.setDescricao(regraAtualizada.getDescricao());
+        regraEncontrada.setParEntrada(regraAtualizada.getParEntrada());
+        regraEncontrada.setParSaida(regraAtualizada.getParSaida());
+        
+        entityManager.merge(regraEncontrada);
+        return regraEncontrada;
     }
     
     @DELETE
     @Path("(id)")
-    public void excluir(@PathParam("id") Integer id, Regra regra){
-        for(Regra r : regras){
-            if(r.getId().equals(id)){
-                regras.remove(r);
-                break;
-            }
-        }
+    public Regra excluir(@PathParam("id") Integer id){
+        Regra regra = getRegra(id);
+        entityManager.remove(regra);
+        return regra;
     }
     
     @GET
     @Path("(id)")
-    public Regra getRegra(@PathParam("id") Integer id, Regra regra){
-        for(Regra r : regras){
-            if(r.getId().equals(id)){
-               return r;
-            }
-        }
-        return null;
+    public Regra getRegra(@PathParam("id") Integer id){
+        return entityManager.find(Regra.class, id);
     }
     
     
