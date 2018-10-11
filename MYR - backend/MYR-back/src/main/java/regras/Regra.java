@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  *
- * @author kamilla
+ * @author kamillad
  */
 @Entity
 @Table(name = "regrasDeNegocio", schema = "public")
