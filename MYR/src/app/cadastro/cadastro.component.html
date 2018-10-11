@@ -1,3 +1,4 @@
+
 <p></p>
 <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
   <div fxFlex="85%">
@@ -45,7 +46,7 @@
         </mat-form-field>
           <div>
               <div>Mandatório?</div>
-              <mat-radio-group>
+              <mat-radio-group id="mandatorio" [(ngModel)]="regras.mandatorio" name="mandatorio"> 
                 <mat-radio-button value="true">Sim</mat-radio-button>
                 <div> </div>
                 <mat-radio-button value="False">Não</mat-radio-button>
@@ -91,5 +92,6 @@
       <button mat-raised-button color="warn" class="teste100">Cancelar</button>
     </div>
   </div>
+  
 
 
