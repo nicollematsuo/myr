@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-gerenciamento',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GerenciamentoComponent implements OnInit {
 
-  constructor() { }
+  registros: Array <any>;
+
+  constructor(private service: DataService) { }
 
   ngOnInit() {
+  this.listar();
+  }
+
+  listar(){
+    this.service.listar().subscribe(dados=> this.registros = dados);
   }
 
 }
