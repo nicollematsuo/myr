@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 import { Regras } from '../Regras';
+import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -9,11 +12,21 @@ import { Regras } from '../Regras';
 })
 export class CadastroComponent implements OnInit {
 
-  regras = new Regras ();
+  regras: any;
 
-  constructor() { }
+  submitted = false;
+  onSubmit() { this.submitted = true; }
+
+  constructor(private service: DataService) { }
 
   ngOnInit() {
+    this.regras = {};
+  }
+  cadastrar(cadastroForm: FormGroup) {
+    this.service.cadastrar(this.regras).subscribe(resposta =>{
+
+      cadastroForm.reset();
+    });
   }
 
 }
