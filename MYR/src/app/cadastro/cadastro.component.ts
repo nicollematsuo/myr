@@ -14,9 +14,6 @@ export class CadastroComponent implements OnInit {
 
   regras: any;
 
-  submitted = false;
-  onSubmit() { this.submitted = true; }
-
   constructor(private service: DataService) { }
 
   ngOnInit() {
