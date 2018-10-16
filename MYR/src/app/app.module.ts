@@ -13,14 +13,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { GerenciamentoComponent } from './gerenciamento/gerenciamento.component';
-import { DataService } from './data.service';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { DataService } from './data.service';
     MatSortModule,
     FlexLayoutModule,
     HttpClientModule,
+    
 
   ],
   providers: [DataService],

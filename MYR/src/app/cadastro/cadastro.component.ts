@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { IdadosLista } from '../dadosListar';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 
 
 @Component({
