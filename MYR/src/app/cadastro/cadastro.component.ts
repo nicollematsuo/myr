@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { Regras } from '../Regras';
+import { IdadosLista } from '../dadosListar';
 import { DataService } from '../data.service';
 
 
@@ -15,7 +15,6 @@ export class CadastroComponent implements OnInit {
   regras: any;
 
   constructor(private service: DataService) { }
-
   ngOnInit() {
     this.regras = {};
   }

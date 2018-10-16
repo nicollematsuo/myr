@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IdadosLista } from './dadosListar';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable({ providedIn: 'root' })
+
 export class DataService {
 
-  apiURL ='';
+  private apiURL = 'http://localhost:8000/home';
 
   constructor(private http: HttpClient) { }
 
-  listar(){
-    return this.http.get<any[]>(`${this.apiURL}`);
+
+  listar(): Observable<IdadosLista[]> {
+    return this.http.get<IdadosLista[]>(this.apiURL)
   }
 
-  cadastrar(regras: any){
-    return this.http.post(this.apiURL, regras);
-
+  cadastrar(regras) {
+    return this.http.post<any>(this.apiURL, regras);
   }
 
 
