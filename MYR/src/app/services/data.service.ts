@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IdadosLista } from './dadosListar';
+import { IdadosLista } from '../dadosListar';
 import { Observable } from 'rxjs';
 
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class DataService {
 
-  private apiURL = 'http://localhost:8000/home';
+  private apiURL = 'http://localhost:3000/data';
 
   constructor(private http: HttpClient) { }
 

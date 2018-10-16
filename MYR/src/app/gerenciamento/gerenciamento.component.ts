@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { IdadosLista } from '../dadosListar';
-
-
-
+import { Observable } from 'rxjs';
+import { DataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-gerenciamento',
@@ -12,13 +11,25 @@ import { IdadosLista } from '../dadosListar';
 })
 export class GerenciamentoComponent implements OnInit {
 
-  registros = [];
-
+  dataSource = new RegistrosDataSource(this.dataservice);
+  displayedColumns = ['Id', 'nome', 'descricao', 'nomeParEntrada', 'tipoParEntrada', 'mandatorio', 'nomeParSaida', 'tipoParSaida'];
+  
 
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.dataservice.listar().subscribe(dados => this.registros = dados.data);
+    
   }
+  
 }
+export class RegistrosDataSource extends DataSource <any>{
+  constructor(private dataService:DataService){
+    super();
+  }
 
+  connect(): Observable<IdadosLista[]>{
+    return this.dataService.listar(); 
+  }
+
+  disconnect(){}
+}
