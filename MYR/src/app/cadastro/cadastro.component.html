@@ -8,13 +8,13 @@
 </div>
 <p></p>
 
-<form (ngSubmit)="onSubmit(ngForm)" #cadastroForm="ngForm">
+<form (ngSubmit)="onSubmit(cadastroForm)" #cadastroForm="ngForm">
   <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
     <div fxFlex="85%">
       <mat-card>
         <mat-card-title>Regras de Negócio</mat-card-title>
         <mat-form-field class="teste100">
-          <input matInput type="text" placeholder="Nome da Regra" id="nomeRegras" #spy [(ngModel)]="regras.nomeRegras" name="nomeRegras" required>
+          <input matInput type="text" placeholder="Nome da Regra" id="nomeRegras" [(ngModel)]="regras.nomeRegras" name="nomeRegras" required>
         </mat-form-field>
         <p>
           <mat-form-field class="teste100">
@@ -47,7 +47,7 @@
         <div>
           <div>Mandatório?</div>
           <mat-radio-group id="mandatorio" [(ngModel)]="regras.mandatorio" name="mandatorio" required>
-            <mat-radio-button value="true">Sim</mat-radio-button>
+            <mat-radio-button value="True">Sim</mat-radio-button>
             <div> </div>
             <mat-radio-button value="False">Não</mat-radio-button>
           </mat-radio-group>

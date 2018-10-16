@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-
-import { IdadosLista } from '../dadosListar';
 import { DataService } from '../services/data.service';
+import { regrasFormat } from '../regras';
+
 
 
 @Component({
@@ -12,17 +11,19 @@ import { DataService } from '../services/data.service';
 })
 export class CadastroComponent implements OnInit {
 
-  regras: any;
+  regras = new regrasFormat();
 
-  constructor(private service: DataService) { }
+  constructor(private dataService:DataService) { }
+
   ngOnInit() {
-    this.regras = {};
-  }
-  cadastrar(cadastroForm: FormGroup) {
-    this.service.cadastrar(this.regras).subscribe(resposta =>{
 
-      cadastroForm.reset();
-    });
   }
 
+  onSubmit() {
+    this.dataService.cadastrar(this.regras).subscribe(
+      data=>console.log('sucess'+data),
+      error => console.log ('error'+error)
+
+    )
+  }
 }
