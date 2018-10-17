@@ -1,7 +1,7 @@
 export interface IdadosLista {
 
     
-        id: string,
+        id: number,
         nomeRegras: string,
         descricaoRegras: string,
         nomeParEntrada: string,

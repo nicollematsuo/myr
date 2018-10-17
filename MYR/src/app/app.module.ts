@@ -14,6 +14,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +26,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { GerenciamentoComponent } from './gerenciamento/gerenciamento.component';
 import { DataService } from './services/data.service';
+import { EditarComponent } from './editar/editar.component';
 
 
 @NgModule({
@@ -30,6 +35,7 @@ import { DataService } from './services/data.service';
     CadastroComponent,
     SidenavComponent,
     GerenciamentoComponent,
+    EditarComponent,
 
   ],
   imports: [
@@ -54,8 +60,13 @@ import { DataService } from './services/data.service';
     MatSortModule,
     FlexLayoutModule,
     HttpClientModule,
-    
+    MatDialogModule,
+    MatCheckboxModule,
 
+
+  ],
+  entryComponents: [
+    EditarComponent,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
