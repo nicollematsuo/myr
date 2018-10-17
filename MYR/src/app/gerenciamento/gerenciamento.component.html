@@ -25,49 +25,49 @@
     </ng-container>
     <!-- Id Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar">Id Regras</div> </th>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold">Id Regras</div> </th>
   
       <td mat-cell *matCellDef="let row"> <div class="centralizar">{{row.id}}</div> </td>
     </ng-container>
   
     <!-- Nome Column -->
     <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar">Nome da Regra</div></th>
-      <td mat-cell *matCellDef="let row"> {{row.nomeRegras}} </td>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold">Nome da Regra</div></th>
+      <td mat-cell *matCellDef="let row"><div class="centralizar">{{row.nomeRegras}} </div></td>
     </ng-container>
   
     <!-- Descrição Column -->
     <ng-container matColumnDef="descricao">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar">Descrição </div></th>
-      <td mat-cell *matCellDef="let row"> {{row.descricaoRegras}} </td>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold">Descrição </div></th>
+      <td mat-cell *matCellDef="let row"> <div class="centralizar">{{row.descricaoRegras}}</div> </td>
     </ng-container>
   
     <!-- Nome do Paramêtro de Entrada Column -->
     <ng-container matColumnDef="nomeParEntrada">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar">Nome do Parâmetro de Entrada </div></th>
-      <td mat-cell *matCellDef="let row"> {{row.nomeParEntrada}} </td>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold">Nome do Parâmetro de Entrada </div></th>
+      <td mat-cell *matCellDef="let row"><div class="centralizar"> {{row.nomeParEntrada}}</div> </td>
   
     </ng-container>
   
     <ng-container matColumnDef="tipoParEntrada">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar">Tipo do Parâmetro de Entrada</div> </th>
-      <td mat-cell *matCellDef="let row"> {{row.tipoParEntrada}} </td>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold">Tipo do Parâmetro de Entrada</div> </th>
+      <td mat-cell *matCellDef="let row"><div class="centralizar">{{row.tipoParEntrada}}</div></td>
     </ng-container>
   
     <ng-container matColumnDef="mandatorio">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar">Mandatório</div></th>
-      <td mat-cell *matCellDef="let row"> {{row.mandatorio}} </td>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold">Mandatório</div></th>
+      <td mat-cell *matCellDef="let row"><div class="centralizar">{{row.mandatorio}}</div></td>
     </ng-container>
   
      <!-- Paramêtro de Saída Column -->
      <ng-container matColumnDef="nomeParSaida">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar"> Nome do Parâmetro de Saída</div></th>
-      <td mat-cell *matCellDef="let row"> {{row.nomeParSaida}} </td>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold"> Nome do Parâmetro de Saída</div></th>
+      <td mat-cell *matCellDef="let row"><div class="centralizar">{{row.nomeParSaida}}</div></td>
     </ng-container>
   
     <ng-container matColumnDef="tipoParSaida">
-      <th mat-header-cell *matHeaderCellDef ><div class="centralizar">Tipo do Parâmetro de Saída</div> </th>
-      <td mat-cell *matCellDef="let row"> {{row.tipoParSaida}} </td>
+      <th mat-header-cell *matHeaderCellDef ><div class="centralizarbold">Tipo do Parâmetro de Saída</div> </th>
+      <td mat-cell *matCellDef="let row"><div class="centralizar">{{row.tipoParSaida}}</div></td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

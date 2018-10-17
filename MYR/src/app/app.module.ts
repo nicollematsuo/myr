@@ -18,8 +18,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -62,7 +60,6 @@ import { EditarComponent } from './editar/editar.component';
     HttpClientModule,
     MatDialogModule,
     MatCheckboxModule,
-
 
   ],
   entryComponents: [

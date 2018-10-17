@@ -13,16 +13,16 @@ export class CadastroComponent implements OnInit {
 
   regras = new regrasFormat();
 
-  constructor(private dataService:DataService) { }
+
+  constructor(private dataService:DataService) {  }
 
   ngOnInit() {
-
   }
 
   onSubmit() {
     this.dataService.cadastrar(this.regras).subscribe(
       data=>console.log('sucess'+data),
-      error => console.log ('error'+error)
+      error =>console.log ('error'+error)
 
     )
   }
