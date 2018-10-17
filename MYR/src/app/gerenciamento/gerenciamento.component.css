@@ -1,0 +1,23 @@
+table {
+  width: 95%;
+  margin: 20px auto;
+}
+
+.centralizarbold{
+text-align: center;
+font-weight: bold;
+}
+.centralizar {
+  text-align: center;
+  }
+  
+.mat-form-field {
+  font-size: 14px;
+  
+}
+
+.filtro {
+  width: 100%
+}
+
+

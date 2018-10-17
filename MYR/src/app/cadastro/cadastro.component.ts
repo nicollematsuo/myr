@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { regrasFormat } from '../regras';
 
-import { Regras } from '../Regras';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -9,11 +11,19 @@ import { Regras } from '../Regras';
 })
 export class CadastroComponent implements OnInit {
 
-  regras = new Regras ();
+  regras = new regrasFormat();
 
-  constructor() { }
+
+  constructor(private dataService:DataService) {  }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.dataService.cadastrar(this.regras).subscribe(
+      data=>console.log('sucess'+data),
+      error =>console.log ('error'+error)
+
+    )
+  }
 }
