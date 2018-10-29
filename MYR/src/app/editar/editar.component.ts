@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import {MatDialogRef} from '@angular/material';
+import {regrasFormat } from '../Regras';
+
 
 @Component({
   selector: 'app-editar',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarComponent implements OnInit {
 
-  constructor() { }
+  @Input() nome:string;
+  regras = new regrasFormat();
+ 
+  constructor(public thisDialogRef: MatDialogRef<EditarComponent>) { }
 
   ngOnInit() {
+    
   }
 
+  salvar(){
+    this.thisDialogRef.close("It Was Saved")
+
+}
 }
