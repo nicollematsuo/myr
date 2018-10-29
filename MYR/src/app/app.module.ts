@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -60,6 +60,7 @@ import { EditarComponent } from './editar/editar.component';
     HttpClientModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatSnackBarModule,
 
   ],
   entryComponents: [
