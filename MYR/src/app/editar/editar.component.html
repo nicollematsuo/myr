@@ -1,3 +1,41 @@
-<p>
-  editar works!
-</p>
+<div>
+  <h2 mat-dialog-title>Editar Regra de Negócio</h2>
+
+  <form method="GET" (ngSubmit)="onSubmit" class="form-horizontal">
+    <!-- <form [formGroup]="form"(ngSubmit)="onSubmit()"> -->
+    <mat-dialog-content>
+      <mat-form-field class="form-control">
+        <input matInput placeholder="Nome da Regra" id="nomeRegras" name="nomeRegras" [(ngModel)]="regras.nomeRegras" type="text" class="form-control">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-control">
+        <input matInput placeholder="Descrição" id="descricaoRegras" name="descricaoRegras" [(ngModel)]="regras.descricaoRegras" type="text" class="form-control">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-control">
+        <input matInput placeholder="Nome do Parâmetro de Entrada" id="nomeParEntrada" name="nomeParEntrada" [(ngModel)]="regras.nomeParEntrada" type="text" class="form-control">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-control">
+        <input matInput placeholder="Tipo do Parâmetro de Entrada" id="tipoParEntrada" name="tipoParEntrada" [(ngModel)]="regras.tipoParEntrada" type="text" class="form-control">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-control">
+        <input matInput placeholder="Mandatório" id="mandatorio" name="mandatorio" [(ngModel)]="regras.mandatorio" type="text" class="form-control">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-control">
+        <input matInput placeholder="Nome do Parâmetro de Saída"id="nomeParSaida" name="nomeParSaida" [(ngModel)]="regras.nomeParSaida" type="text" class="form-control">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-control">
+        <input matInput placeholder="Tipo do Parâmetro de Saída" id="tipoParSaida" name="tipoParSaida" [(ngModel)]="regras.tipoParSaida"
+          type="text">
+      </mat-form-field>
+    </mat-dialog-content>
+  </form>
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="salvar()">Salvar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</div>
