@@ -15,11 +15,14 @@ export class DataService {
 
 
   listar(): Observable<IdadosLista[]> {
-    return this.http.get<IdadosLista[]>(this.apiURL)
+    return this.http.get<IdadosLista[]>(this.apiURL);
   }
 
   cadastrar(regras: regrasFormat) {
     return this.http.post<any>(this.apiURL, regras);
+  }
+  deletar(id: number){
+    return this.http.delete(this.apiURL + '/' + id)
   }
 
 
